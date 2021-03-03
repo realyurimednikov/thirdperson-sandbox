@@ -8,7 +8,7 @@ This is a playground to validate (and learn) different hacks about third person 
 # Assets copyrights
 
 - Human model by [danielabbott](https://danielabbott.itch.io/human-with-walk-animation) 
-- Knight model by [lancel](https://opengameart.org/content/animated-knight-walk-edit)
+- Knight model by [Clement Wu, Nikolaus, Botanic](https://opengameart.org/content/animated-knight)
 
 ## Contacts
 
@@ -16,4 +16,9 @@ Feel free to contact me on [twitter](https://www.twitter.com/iuriimednikov)
 
 ## License
 
-Copyright (2021) Yuri Mednikov (Iurii Mednikov). Released under terms of [MIT license](https://opensource.org/licenses/MIT)
+The project has separate licensing for code and assets.
+
+- Code: Copyright(2021) Yuri Mednikov (Iurii Mednikov), [MIT license](https://opensource.org/licenses/MIT)
+- Human model: Copyright (2020) danielabbott, [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/)
+- Knight model: Copyright (2011) Clement Wu, Nikolaus & Botanic
+, [CC-BY.30](https://creativecommons.org/licenses/by/3.0/)
