@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/KnightEnemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemies/ArcherEnemy.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 4, 1, 4 )
@@ -28,6 +29,9 @@ shape = SubResource( 2 )
 
 [node name="KnightEnemy" parent="Enemies" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.60572, 1.36377, 0 )
+
+[node name="ArcherEnemy" parent="Enemies" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.53246, 1.531, 5.68856 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16238, -4.60264 )
