@@ -1,12 +1,14 @@
 # Third person RPG sandbox
 
-This is a playground to validate (and learn) different hacks about third person RPG development with Godot. Created with Godot v.3.2.3 and tested on Windows 10. Currently, the project has following functionality;
+This is a playground to validate (and learn) different hacks about third person RPG development with Godot. Created with Godot v.3.2.3 and tested on Windows 10. Currently, the project has following functionality:
 
 - Third person controller with a placeholder and idle/walk animation
+- Two types of enemies (knight and archer)
 
 # Assets copyrights
 
 - Human model by [danielabbott](https://danielabbott.itch.io/human-with-walk-animation) 
+- Knight model by [lancel](https://opengameart.org/content/animated-knight-walk-edit)
 
 ## Contacts
 
