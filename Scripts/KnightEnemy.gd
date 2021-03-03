@@ -3,7 +3,7 @@ extends GenericEnemy
 
 #onready var health_bar = $EnemyHealthBar
 onready var attack_raycast = $AttackRaycast
-
+onready var animation_player = $knight/AnimationPlayer
 
 #func _physics_process(delta):
 #	if target:
@@ -33,3 +33,11 @@ func _on_DetectArea_body_exited(body):
 #	if attack_raycast.is_colliding():
 #		if target:
 #			target.get_attacked(attack_strength)
+
+
+func on_walk():
+	animation_player.play("Walk")
+
+
+func on_guard():
+	animation_player.stop()

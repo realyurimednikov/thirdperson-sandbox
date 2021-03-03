@@ -28,7 +28,7 @@ shape = SubResource( 2 )
 [node name="Enemies" type="Node" parent="."]
 
 [node name="KnightEnemy" parent="Enemies" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.60572, 1.36377, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.60572, 3.04079, 0 )
 
 [node name="ArcherEnemy" parent="Enemies" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.53246, 1.531, 5.68856 )

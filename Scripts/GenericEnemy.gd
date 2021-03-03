@@ -16,11 +16,14 @@ var target
 
 func _ready():
 	add_to_group('Enemy')
+	
 	attack_timer = Timer.new()
 	attack_timer.set_one_shot(false)
 	attack_timer.set_wait_time(attack_rate)
 	attack_timer.connect("timeout", self, "attack")
 	add_child(attack_timer)
+	
+#	on_guard()
 
 
 func _physics_process(delta):
@@ -46,12 +49,14 @@ func take_damage(dmg):
 
 func die():
 	print('I died! ' + name)
+	on_die()
 	queue_free()
 
 
 func attack():
 	if target:
 		target.get_attacked(attack_strength)
+		on_attack()
 
 
 func update_health_bar():
@@ -61,6 +66,8 @@ func update_health_bar():
 func chase(delta):
 	var direction = (target.transform.origin - transform.origin).normalized()
 	move_and_slide(direction * speed * delta, Vector3.UP)
+	
+	on_walk()
 
 
 func on_body_entered(body):
@@ -78,3 +85,20 @@ func on_body_exited(body):
 		print('Player exited')
 		health_bar.hide()
 		attack_timer.stop()
+		on_guard()
+
+
+func on_walk():
+	pass
+
+
+func on_attack():
+	pass
+
+
+func on_die():
+	pass
+
+
+func on_guard():
+	pass
