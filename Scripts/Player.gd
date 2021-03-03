@@ -1,6 +1,12 @@
 extends KinematicBody
 
 
+const FRONT = -180
+const LEFT = -90
+const RIGHT = 90
+const BACK = 0
+
+
 export var speed: float = 10
 export var acceleration: float = 5
 export var gravity: float = 9.8
@@ -19,7 +25,7 @@ onready var camera_pivot = $CameraPivot
 onready var camera = $CameraPivot/CameraArm/Camera
 onready var animation_player = $human/AnimationPlayer
 onready var attack_raycast = $AttackRaycast
-
+onready var model = $human
 
 func _ready():
 #	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -48,13 +54,16 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("move_forward"):
 		direction -= transform.basis.z
+		model.rotation_degrees = Vector3(0, FRONT, 0)
 	elif Input.is_action_pressed("move_backward"):
 		direction += transform.basis.z
-
+		model.rotation_degrees = Vector3(0, BACK, 0)
 	if Input.is_action_pressed("move_left"):
 		direction -= transform.basis.x
+		model.rotation_degrees = Vector3(0, LEFT, 0)
 	elif Input.is_action_pressed("move_right"):
 		direction += transform.basis.x
+		model.rotation_degrees = Vector3(0, RIGHT, 0)
 	
 	if direction != Vector3.ZERO:
 		animation_player.play("Walk")
