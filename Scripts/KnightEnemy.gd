@@ -3,6 +3,7 @@ extends GenericEnemy
 
 onready var attack_timer = $Timer
 onready var health_bar = $EnemyHealthBar
+onready var attack_raycast = $AttackRaycast
 
 
 func _physics_process(delta):
@@ -29,7 +30,9 @@ func _on_DetectArea_body_exited(body):
 
 
 func _on_Timer_timeout():
-	attack()
+#	attack()
+	if attack_raycast.is_colliding():
+		attack()
 
 func update_health_bar():
 	health_bar.show_health(health)
