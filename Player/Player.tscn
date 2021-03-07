@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/ManMat.material" type="Material" id=2]
 [ext_resource path="res://Player/PlayerUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/SpecialMode.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -714,3 +715,6 @@ cast_to = Vector3( 0, 0, -3 )
 collision_mask = 4
 
 [node name="PlayerUI" parent="." instance=ExtResource( 3 )]
+
+[node name="SpecialMode" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.532864, 0 )

@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Health_player.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/PlayerUI.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Health_player_back.png" type="Texture" id=3]
+[ext_resource path="res://Assets/SpecialMode_bar.png" type="Texture" id=4]
+[ext_resource path="res://Assets/SpecialMode_bar_back.png" type="Texture" id=5]
 
 [node name="PlayerUI" type="Control"]
 anchor_right = 1.0
@@ -22,11 +25,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Healthbar" type="TextureProgress" parent="HealthbarContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HealthbarContainer"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 200.0
-margin_bottom = 55.0
+margin_right = 201.0
+margin_bottom = 112.0
+
+[node name="Healthbar" type="TextureProgress" parent="HealthbarContainer/VBoxContainer"]
+margin_right = 191.0
+margin_bottom = 49.0
 value = 100.0
+texture_under = ExtResource( 3 )
 texture_progress = ExtResource( 1 )
-tint_under = Color( 0.286275, 0.137255, 0.137255, 1 )
+tint_under = Color( 0.470588, 0.470588, 0.470588, 1 )
+
+[node name="SpecialModeBar" type="TextureProgress" parent="HealthbarContainer/VBoxContainer"]
+visible = false
+margin_top = 53.0
+margin_right = 191.0
+margin_bottom = 102.0
+step = 10.0
+value = 100.0
+texture_under = ExtResource( 5 )
+texture_progress = ExtResource( 4 )

@@ -26,6 +26,7 @@ onready var camera = $CameraPivot/CameraArm/Camera
 onready var animation_player = $human/AnimationPlayer
 onready var attack_raycast = $AttackRaycast
 onready var model = $human
+onready var special_mode = $SpecialMode
 
 func _ready():
 #	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -48,6 +49,9 @@ func _input(event):
 
 
 func _physics_process(delta):
+	
+	if Input.is_action_just_pressed("special_mode"):
+		special_mode.activate()
 	
 	#move
 	var direction = Vector3()
@@ -79,9 +83,14 @@ func _physics_process(delta):
 func attack():
 	if attack_raycast.is_colliding():
 		var coll = attack_raycast.get_collider()
-		if coll.is_in_group('Enemy'):
-			print('Attack!')
-			coll.take_damage(attack_damage)
+		if coll is GenericEnemy:
+			var enemy = coll as GenericEnemy
+			if special_mode.is_activated:
+				enemy.take_damage(special_mode.extended_damage)
+				print('Special mode attack')
+			else:
+				enemy.take_damage(attack_damage)
+				print('Ordinary attack')
 
 
 func get_attacked(damage):
