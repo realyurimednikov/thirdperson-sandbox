@@ -32,6 +32,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.60572, 3.04079, 0 )
 
 [node name="ArcherEnemy" parent="Enemies" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.53246, 1.531, 5.68856 )
+xp_given = 25.0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41987, -4.60264 )

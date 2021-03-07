@@ -1,6 +1,9 @@
 extends KinematicBody
 
 
+class_name Player
+
+
 const FRONT = -180
 const LEFT = -90
 const RIGHT = 90
@@ -19,7 +22,7 @@ export(float, 0, 90) var max_pitch: float = 90
 
 
 var velocity: Vector3
-var health: float = 100
+#var health: float = 100
 
 onready var camera_pivot = $CameraPivot
 onready var camera = $CameraPivot/CameraArm/Camera
@@ -104,6 +107,13 @@ func attack():
 				print('Ordinary attack')
 
 
-func get_attacked(damage):
-	health -= damage
-	get_tree().call_group('UI', 'update_healthbar', health)
+func get_attacked(damage: float):
+#	health -= damage
+	PlayerState.player_health -= damage
+#	PlayerState.decrease_health(damage)
+	get_tree().call_group('UI', 'update_healthbar')
+
+
+func add_xp(xp: float):
+	PlayerState.xp += xp
+	print('Current XP: ' + str(PlayerState.xp))

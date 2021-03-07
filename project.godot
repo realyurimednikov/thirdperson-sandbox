@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "GenericEnemy",
 "language": "GDScript",
 "path": "res://Scripts/GenericEnemy.gd"
+}, {
+"base": "KinematicBody",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Scripts/Player.gd"
 } ]
 _global_script_class_icons={
-"GenericEnemy": ""
+"GenericEnemy": "",
+"Player": ""
 }
 
 [application]
@@ -23,6 +29,10 @@ _global_script_class_icons={
 config/name="Third_Person_Tutorial"
 run/main_scene="res://Levels/DemoLevel.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+PlayerState="*res://Scripts/PlayerState.gd"
 
 [display]
 

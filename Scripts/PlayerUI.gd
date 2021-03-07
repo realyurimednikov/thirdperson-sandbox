@@ -7,8 +7,9 @@ onready var special_mode_bar = $HealthbarContainer/VBoxContainer/SpecialModeBar
 func _ready():
 	add_to_group('UI')
 
-func update_healthbar(health: float):
-	health_bar.value = health
+func update_healthbar():
+	health_bar.value = PlayerState.player_health
+#	health_bar.value = health
 
 
 func update_special_mode_bar(value: float):
