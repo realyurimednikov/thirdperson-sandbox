@@ -58,16 +58,27 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("move_forward"):
 		direction -= transform.basis.z
+		
 		model.rotation_degrees = Vector3(0, FRONT, 0)
+		attack_raycast.rotation_degrees = Vector3(0, BACK, 0)
+		
 	elif Input.is_action_pressed("move_backward"):
 		direction += transform.basis.z
+		
 		model.rotation_degrees = Vector3(0, BACK, 0)
+		attack_raycast.rotation_degrees = Vector3(0, FRONT, 0)
+		
 	if Input.is_action_pressed("move_left"):
 		direction -= transform.basis.x
+		
 		model.rotation_degrees = Vector3(0, LEFT, 0)
+		attack_raycast.rotation_degrees = Vector3(0, RIGHT, 0)
+		
 	elif Input.is_action_pressed("move_right"):
 		direction += transform.basis.x
+		
 		model.rotation_degrees = Vector3(0, RIGHT, 0)
+		attack_raycast.rotation_degrees = Vector3(0, LEFT, 0)
 	
 	if direction != Vector3.ZERO:
 		animation_player.play("Walk")
