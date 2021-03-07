@@ -86,4 +86,4 @@ func attack():
 
 func get_attacked(damage):
 	health -= damage
-	print('Player damaged, health: '+ str(health))
+	get_tree().call_group('UI', 'update_healthbar', health)
