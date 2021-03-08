@@ -7,6 +7,7 @@ export var attack_strength: float = 5
 export var speed: float = 15
 export var attack_rate: float = 1
 export var is_chasing: bool = true
+export var xp_given: float = 5
 
 onready var health_bar = $"./EnemyHealthBar"
 onready var attack_timer: Timer
@@ -49,14 +50,18 @@ func take_damage(dmg):
 
 func die():
 	print('I died! ' + name)
+	if target:
+		if target.has_method('add_xp'):
+			target.add_xp(xp_given)
 	on_die()
 	queue_free()
 
 
 func attack():
 	if target:
-		target.get_attacked(attack_strength)
-		on_attack()
+		if target.has_method('get_attacked'):
+			target.get_attacked(attack_strength)
+			on_attack()
 
 
 func update_health_bar():
