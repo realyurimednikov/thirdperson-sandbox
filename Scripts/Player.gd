@@ -10,7 +10,8 @@ const RIGHT = 90
 const BACK = 0
 
 
-export var speed: float = 10
+export var normal_speed: float = 10
+export var run_speed: float = 30
 export var acceleration: float = 5
 export var gravity: float = 9.8
 export var jumping_power: float = 30
@@ -89,6 +90,8 @@ func _physics_process(delta):
 		animation_player.play("Idle")
 	
 	direction = direction.normalized()
+	
+	var speed = run_speed if Input.is_action_pressed("move_run") else normal_speed
 	
 	velocity = velocity.linear_interpolate(direction * speed, acceleration * delta)
 	velocity = move_and_slide(velocity, Vector3.UP)
