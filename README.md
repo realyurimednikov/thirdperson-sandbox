@@ -1,6 +1,8 @@
 # Third person RPG sandbox
 
-This is a playground to validate (and learn) different hacks about third person RPG development with Godot. Created with Godot v.3.2.3 and tested on Windows 10. Currently, the project has following functionality:
+This is a playground to play with (and learn) different hacks about third person RPG development with Godot. Created with Godot v.3.2.3 and tested on Windows 10 and Linux (Ubuntu 20.04 LTS). 
+
+Currently, the project has following functionality:
 
 - Third person controller with a placeholder and idle/walk animation
 - Two types of enemies (knight and archer)
@@ -12,7 +14,7 @@ This is a playground to validate (and learn) different hacks about third person 
 
 ## Contacts
 
-Feel free to contact me on [twitter](https://www.twitter.com/iuriimednikov)
+Feel free to contact me on [twitter](https://www.twitter.com/yurimednikov)
 
 ## License
 
